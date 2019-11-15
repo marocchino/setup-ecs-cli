@@ -8,8 +8,7 @@ async function getEcsCli(version) {
     const ecsCliPath = await tc.downloadTool(
       `https://s3.amazonaws.com/amazon-ecs-cli/ecs-cli-linux-amd64-${version}`
     );
-    const extracted = await tc.extractZip(ecsCliPath);
-    toolPath = await tc.cacheDir(extracted, "ecs-cli", version);
+    toolPath = await tc.cacheDir(ecsCliPath, "ecs-cli", version);
   }
   core.addPath(toolPath);
 }
