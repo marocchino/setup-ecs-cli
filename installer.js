@@ -1,6 +1,7 @@
 const tc = require("@actions/tool-cache");
 const core = require("@actions/core");
 const io = require("@actions/io");
+const exec = require("@actions/exec");
 
 async function getEcsCli(version) {
   // check cache
@@ -12,6 +13,7 @@ async function getEcsCli(version) {
     const targetPath = `tools/ecs-cli/${version}`;
     await io.mkdirP(targetPath);
     await io.cp(ecsCliPath, `${targetPath}/ecs-cli`);
+    await exec.exec(`chmod +x ${targetPath}/ecs-cli`);
     toolPath = await tc.cacheDir(targetPath, "ecs-cli", version);
   }
   core.addPath(toolPath);

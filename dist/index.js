@@ -1673,6 +1673,7 @@ module.exports = require("child_process");
 const tc = __webpack_require__(361);
 const core = __webpack_require__(343);
 const io = __webpack_require__(938);
+const exec = __webpack_require__(797);
 
 async function getEcsCli(version) {
   // check cache
@@ -1684,6 +1685,7 @@ async function getEcsCli(version) {
     const targetPath = `tools/ecs-cli/${version}`;
     await io.mkdirP(targetPath);
     await io.cp(ecsCliPath, `${targetPath}/ecs-cli`);
+    await exec.exec(`chmod +x ${targetPath}/ecs-cli`);
     toolPath = await tc.cacheDir(targetPath, "ecs-cli", version);
   }
   core.addPath(toolPath);
