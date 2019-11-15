@@ -1,0 +1,31 @@
+{
+  "name": "setup-ecs-cli",
+  "version": "1.0.0",
+  "description": "Set up your GitHub Actions workflow with a specific version of ecs-cli",
+  "main": "index.js",
+  "scripts": {
+    "lint": "eslint index.js",
+    "package": "ncc build index.js -o dist",
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/marocchino/setup-ecs-cli.git"
+  },
+  "keywords": [],
+  "author": "marocchino",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/marocchino/setup-ecs-cli/issues"
+  },
+  "homepage": "https://github.com/marocchino/setup-ecs-cli#readme",
+  "dependencies": {
+    "@actions/core": "^1.1.1",
+    "@actions/tool-cache": "^1.1.2"
+  },
+  "devDependencies": {
+    "@zeit/ncc": "^0.20.5",
+    "eslint": "^6.3.0",
+    "jest": "^24.9.0"
+  }
+}
