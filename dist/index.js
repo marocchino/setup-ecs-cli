@@ -1672,6 +1672,7 @@ module.exports = require("child_process");
 
 const tc = __webpack_require__(361);
 const core = __webpack_require__(343);
+const io = __webpack_require__(938);
 
 async function getEcsCli(version) {
   // check cache
@@ -1680,7 +1681,10 @@ async function getEcsCli(version) {
     const ecsCliPath = await tc.downloadTool(
       `https://s3.amazonaws.com/amazon-ecs-cli/ecs-cli-linux-amd64-${version}`
     );
-    toolPath = await tc.cacheDir(ecsCliPath, "ecs-cli", version);
+    const targetPath = `tools/ecs-cli/${version}`;
+    await io.mkdirP(targetPath);
+    await io.cp(ecsCliPath, `${targetPath}/ecs-cli`);
+    toolPath = await tc.cacheDir(targetPath, "ecs-cli", version);
   }
   core.addPath(toolPath);
 }
