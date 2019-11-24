@@ -22,6 +22,18 @@ steps:
       version: "v1.16.0"
 ```
 
+Script mode:
+
+If you want to skip cache part, you can run it from shell
+
+```yaml
+steps:
+  - uses: actions/checkout@master
+  - env:
+      VERSION: "latest"
+    run: bash -c "$(curl -fsSL https://raw.githubusercontent.com/marocchino/setup-ecs-cli/v1/entrypoint.sh)"
+```
+
 # License
 
 The scripts and documentation in this project are released under the [MIT License](LICENSE)
