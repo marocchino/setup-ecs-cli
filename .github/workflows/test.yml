@@ -13,8 +13,3 @@ jobs:
         with:
           version: "v1.18.0"
       - run: ecs-cli --version
-  test-shell:
-    runs-on: ubuntu-latest
-    steps:
-      - run: bash -c "$(curl -fsSL https://raw.githubusercontent.com/marocchino/setup-ecs-cli/from-shell/entrypoint.sh)"
-      - run: ecs-cli --version
