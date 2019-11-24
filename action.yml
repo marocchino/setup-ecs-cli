@@ -2,9 +2,9 @@ name: "Setup ecs-cli environment"
 description: "Setup a ecs-cli environment and add it to the PATH"
 inputs:
   version: # id of input
-    description: "The ecs-cli version to download (if necessary) and use. Example: v1.16.0"
+    description: "The ecs-cli version to download (if necessary) and use. Example: v1.18.0"
     required: true
-    default: "v1.16.0"
+    default: "v1.18.0"
 runs:
   using: "node12"
   main: "dist/index.js"

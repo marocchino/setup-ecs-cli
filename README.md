@@ -19,7 +19,7 @@ steps:
   - uses: actions/checkout@master
   - uses: marocchino/setup-ecs-cli@v1
     with:
-      version: "v1.16.0"
+      version: "v1.18.0"
 ```
 
 Script mode:
