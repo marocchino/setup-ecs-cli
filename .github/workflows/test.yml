@@ -13,3 +13,11 @@ jobs:
         with:
           version: "v1.18.0"
       - run: ecs-cli --version
+  test-shell:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@master
+      - name: Install ecs-cli
+        run: bash entrypoint.sh
+      - run: ecs-cli --version
