@@ -1,4 +1,6 @@
-# setup-ecs-cli
+# setup-ecs-cli (Obsolete)
+
+Use <https://github.com/aws/amazon-ecs-cli> instead of it.
 
 <p align="left">
   <a href="https://github.com/marocchino/setup-ecs-cli"><img alt="GitHub Actions status" src="https://github.com/marocchino/setup-ecs-cli/workflows/test/badge.svg"></a>
